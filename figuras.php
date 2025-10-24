@@ -12,9 +12,9 @@ if ($_POST) {
     if ($b > 0 && $h > 0) {
         $area = $b * $h;
         $perimetro = 2 * ($b + $h);
-        $resultado = "Área = $area<br>Perímetro = $perimetro";
+        $resultado = "Área: $area<br>Perímetro: $perimetro";
     } else {
-        $resultado = "Error: Los valores deben ser positivos.";
+        $resultado = "Error: los valores deben ser positivos.";
     }
 }
 ?>
@@ -23,12 +23,13 @@ if ($_POST) {
 <html>
 <head><title>Figuras</title></head>
 <body>
-    <h2>Cálculo de área y perímetro de un rectángulo</h2>
+    <h2>Cálculo de Área y Perímetro</h2>
     <form method="POST">
         Base: <input type="number" name="base" required><br>
         Altura: <input type="number" name="altura" required><br>
         <button type="submit">Calcular</button>
     </form>
     <p><?php echo $resultado; ?></p>
+    <a href="panel.php">Volver al panel</a>
 </body>
 </html>

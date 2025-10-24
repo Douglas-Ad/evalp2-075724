@@ -4,7 +4,8 @@ include("db.php");
 
 if ($_POST) {
     $usuario = $_POST['user'];
-    $clave = md5($_POST['pass']); // Encriptar la contraseña
+    $clave = md5($_POST['pass']); // ciframos la contraseña
+
     $sql = "SELECT * FROM usuarios WHERE usuario='$usuario' AND clave='$clave'";
     $result = $conn->query($sql);
 
@@ -20,9 +21,7 @@ if ($_POST) {
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Login</title>
-</head>
+<head><title>Login</title></head>
 <body>
     <h2>Iniciar Sesión</h2>
     <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
